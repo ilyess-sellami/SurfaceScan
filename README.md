@@ -98,9 +98,12 @@ pip install -r requirements.txt
 ```
 
 #### 4) Aggregate collected outputs
+```bash
 python tools/aggregate_data.py --input outputs/ --output aggregated/incident-surface.json
+```
 
-# 5) Launch the dashboard (optional)
+#### 5) Launch the dashboard (optional)
+```bash
 python tools/visualize_data.py aggregated/incident-surface.json
 ```
 
