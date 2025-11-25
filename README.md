@@ -78,7 +78,7 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 #### 1) Clone the repo
 
 ```bash
-git clone https://github.com/username/SurfaceScan.git
+git clone https://github.com/ilyess-sellami/SurfaceScan.git
 cd SurfaceScan
 ```
 
