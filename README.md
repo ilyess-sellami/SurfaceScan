@@ -215,7 +215,7 @@ Each script should:
 Contributions are welcome! Please follow these steps:
 
 1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/add-aws-scan`.
+2. Create a feature branch: `git checkout -b feature/<feature-name>`.
 3. Add tests and documentation for new scripts.
 4. Run linting and unit checks.
 5. Open a Pull Request with a clear description and test results.
