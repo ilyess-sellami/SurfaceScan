@@ -1,0 +1,16 @@
+{
+  "host": "MacBook-Pro-Ilyess",
+  "collected_at": "2025-11-25T20:03:29+01:00",
+  "category": "system",
+  "data": {
+    "os": "macOS",
+    "os_version": "14.5",
+    "architecture": "x86_64",
+    "kernel_version": "23.5.0",
+    "hostname": "MacBook-Pro-Ilyess",
+    "uptime_seconds": 0,
+    "cpu": "Intel(R) Core(TM) i5-8259U CPU @ 2.30GHz",
+    "cpu_cores": 4,
+    "memory_total_mb": 8192,00
+  }
+}
