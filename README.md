@@ -28,11 +28,8 @@
 - [Usage Examples](#usage-examples)
 - [Script Functions (Blueprint)](#script-functions-blueprint)
 - [Output Format & Dashboard](#output-format--dashboard)
-- [Integrations](#integrations)
 - [Security & Safety](#security--safety)
 - [Contributing](#contributing)
-- [Roadmap](#roadmap)
-- [Maintainers & Acknowledgements](#maintainers--acknowledgements)
 - [License](#license)
 
 ---
@@ -171,3 +168,66 @@ Each script should:
 - Use safe, read-only commands (no destructive actions).
 - Accept `--output` and `--format` flags.
 - Return valid JSON (or JSONL) that follows the repo’s schema (see `/docs/schema.md`).
+
+---
+
+## Output Format & Dashboard
+
+#### Standardized JSON schema (example snippet):
+
+```json
+{
+  "host": "host-01",
+  "os": "Ubuntu 22.04",
+  "collected_at": "2025-11-25T12:00:00Z",
+  "system": {...},
+  "users": [...],
+  "processes": [...],
+  "services": [...],
+  "network": {...},
+  "logs": {...}
+}
+```
+
+#### Dashboard
+
+- A lightweight HTML dashboard (templates in /dashboards/simple_html_dashboard/) visualizes:
+  - Top 10 hosts by number of open ports
+  - Hosts with admin users
+  - Recently modified critical files
+  - Timeline of service changes
+
+- Use python `tools/visualize_data.py aggregated/incident-surface.json` to generate `dashboard/index.html`.
+
+---
+
+## Security & Safety
+
+- **Non-destructive by design:** All collection scripts are read-only unless explicitly documented.
+- **Privileged operations:** Some scripts require admin/root rights. Always run under controlled conditions and obtain appropriate authorization.
+- **Data sensitivity:** Collected outputs may contain sensitive data — store and transfer outputs securely (encrypted at rest/in transit).
+- **Auditability:** Scripts log run metadata (who ran, when, arguments) for audit trails.
+
+---
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+Fork the repository.
+
+Create a feature branch: git checkout -b feature/add-aws-scan.
+
+Add tests and documentation for new scripts.
+
+Run linting and unit checks.
+
+Open a Pull Request with a clear description and test results.
+
+Please read CONTRIBUTING.md for style guides, code of conduct, and commit message rules.
+
+---
+
+## License
+
+Licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
