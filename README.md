@@ -141,7 +141,7 @@ The following table is the canonical blueprint of scripts to include. Each scrip
 |----------------|----------------------------------------------|--------------------------------------------------------|----------------|
 | **System**     | `get_system_info`                            | Collect OS, hostname, uptime, CPU, memory, architecture | All            |
 | **Users**      | `list_users_groups`                          | Enumerate local users, groups, last logon, admin flags | All            |
-| **Privileges** | `check_sudo_privileges` / `check_admins`     | Identify users with root/admin/sudo rights            | All            |
+| **Privileges** | `check_sudo_privileges`     | Identify users with root/admin/sudo rights            | All            |
 | **Processes**  | `list_processes`                             | List running processes with PID, owner, CPU/MEM usage | All            |
 | **Services**   | `list_services`                              | Gather services/daemons, status, startup type         | All            |
 | **Installed Apps** | `list_installed_apps`                   | Enumerate installed software & versions               | All            |
