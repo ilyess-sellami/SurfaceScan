@@ -1,7 +1,7 @@
 # SurfaceScan 🛡️
 
 **Cross-platform Incident Surface Scanner for SOC & DFIR teams**  
-*Gain complete visibility across Windows · Linux · macOS — ready-to-run scripts, structured output, and integrations for SIEM & incident management.*
+*Gain complete visibility across Windows · Linux · macOS — ready-to-run scripts, structured output.*
 
 [![GitHub stars](https://img.shields.io/github/stars/username/SurfaceScan?style=social)](https://github.com/username/SurfaceScan/stargazers)
 [![Issues](https://img.shields.io/github/issues/username/SurfaceScan)](https://github.com/username/SurfaceScan/issues)
