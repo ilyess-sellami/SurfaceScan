@@ -37,7 +37,7 @@
 ## About SurfaceScan
 
 **SurfaceScan** is a professional, open-source **incident surface scanner** designed for SOC analysts, DFIR teams, and security engineers.  
-It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux (Bash)**, and **macOS (Bash/zsh)** to collect telemetry, configuration, and state information from endpoints. Outputs are normalized to JSON/CSV for ingestion into SIEMs, incident management platforms (TheHive, FIR), or internal dashboards.
+It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux (Bash)**, and **macOS (Bash/zsh)** to collect telemetry, configuration, and state information from endpoints. Outputs are normalized to JSON for ingestion into SIEMs, incident management platforms (TheHive, FIR), or internal dashboards.
 
 **Keywords:** incident surface, SOC, DFIR, incident response, endpoint monitoring, attack surface mapping, cross-platform, PowerShell, Bash, Python.
 
@@ -47,7 +47,7 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 
 - Centralize endpoint discovery data to map your organization’s attack surface.
 - Speed up triage: run scripts quickly to collect the evidence analysts need.
-- Standardized outputs (JSON/CSV) for automation and integration.
+- Standardized outputs (JSON) for automation and integration.
 - Modular and extensible — add scripts for cloud, network devices, or IoT easily.
 - Safe, non-destructive collection that’s auditable and reproducible.
 
@@ -57,9 +57,9 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 
 - ✅ Cross-platform: Windows, Linux, macOS  
 - ✅ Standalone, ready-to-run scripts for fast data collection  
-- ✅ Structured JSON/CSV outputs (SIEM & automation friendly)  
+- ✅ Structured JSON outputs (SIEM & automation friendly)  
 - ✅ Aggregation tools to merge multi-host results into a single map  
-- ✅ Optional HTML/Python dashboard for visualization  
+- ✅ Optional HTML dashboard for visualization  
 - ✅ Extensible plugin model for cloud and network asset scanners  
 - ✅ Non-destructive and built for safe SOC/DFIR usage
 
@@ -134,8 +134,7 @@ chmod +x ./scripts/linux/list_processes.sh
 
 ## Script Functions (Blueprint)
 
-The following table is the canonical blueprint of scripts to include. Each script should accept an `--output` or `-o` parameter to write JSON/CSV output and a --quiet flag for silent runs.
-
+The following table is the canonical blueprint of scripts to include.
 
 | Category       | Script Name (Suggested)                      | Purpose                                                | OS / Language |
 |----------------|----------------------------------------------|--------------------------------------------------------|----------------|
@@ -160,7 +159,7 @@ The following table is the canonical blueprint of scripts to include. Each scrip
 | **Threat Intel** | `cve_check_installed_software`             | Map installed apps to known CVEs                      | Optional       |
 | **Export**     | `export_to_json`                             | Convert raw outputs into normalized JSON              | Python         |
 | **Aggregate**  | `aggregate_data`                             | Merge multiple host outputs into one dataset          | Python         |
-| **Visualize**  | `visualize_data`                             | Generate HTML dashboard or CSV/PDF reports            | Python/HTML    |
+| **Visualize**  | `visualize_data`                             | Generate HTML dashboard or CSV/PDF reports            | Python    |
 
 
 Each script should:
