@@ -1,7 +1,5 @@
-<#
-.SYNOPSIS
-    Collects system information for Windows hosts.
-#>
+# get_system_info.ps1
+# Outputs system information in JSON format
 
 param(
     [string]$Output = ""
