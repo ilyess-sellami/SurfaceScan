@@ -25,7 +25,6 @@
 - [Features](#features)
 - [Supported Platforms](#supported-platforms)
 - [Quick Start](#quick-start)
-- [Installation](#installation)
 - [Usage Examples](#usage-examples)
 - [Script Functions (Blueprint)](#script-functions-blueprint)
 - [Output Format & Dashboard](#output-format--dashboard)
@@ -80,12 +79,14 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 ## Quick Start
 
 #### 1) Clone the repo
+
 ```bash
 git clone https://github.com/username/SurfaceScan.git
 cd SurfaceScan
 ```
 
-#### 2) (Optional) Create a Python virtual environment for tools
+#### 2) Create a Python virtual environment for tools
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -93,20 +94,45 @@ pip install -r requirements.txt
 ```
 
 #### 3) Run an example script (Linux example)
+
 ```bash
  ./scripts/linux/list_users_groups.sh > output/linux-users-$(hostname).json
 ```
 
 #### 4) Aggregate collected outputs
+
 ```bash
 python tools/aggregate_data.py --input outputs/ --output aggregated/incident-surface.json
 ```
 
 #### 5) Launch the dashboard (optional)
+
 ```bash
 python tools/visualize_data.py aggregated/incident-surface.json
 ```
 
 ---
+
+## Usage Examples
+
+#### Windows (PowerShell)
+
+Open an elevated PowerShell prompt to run scripts that **require admin privileges**:
+
+```bash
+# Collect basic system info and users
+.\scripts\windows\get_system_info.ps1 -OutputPath .\outputs\windows-hostname-system.json
+.\scripts\windows\list_users_groups.ps1 -OutputPath .\outputs\windows-hostname-users.json
+```
+
+#### Linux / macOS (Bash)
+
+```bash
+# Make sure script has execute permissions
+chmod +x ./scripts/linux/list_processes.sh
+./scripts/linux/list_processes.sh > outputs/linux-hostname-processes.json
+```
+
+
 
 
