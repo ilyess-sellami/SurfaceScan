@@ -79,15 +79,19 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 
 ## Quick Start
 
+### 1) Clone the repo
+
 ```bash
-# 1) Clone the repo
 git clone https://github.com/username/SurfaceScan.git
 cd SurfaceScan
+```
 
-# 2) (Optional) Create a Python virtual environment for tools
+### 2) (Optional) Create a Python virtual environment for tools
+```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
 # 3) Run an example script (Linux example)
 bash ./scripts/linux/list_users_groups.sh > output/linux-users-$(hostname).json
@@ -97,3 +101,8 @@ python tools/aggregate_data.py --input outputs/ --output aggregated/incident-sur
 
 # 5) Launch the dashboard (optional)
 python tools/visualize_data.py aggregated/incident-surface.json
+```
+
+---
+
+
