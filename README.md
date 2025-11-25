@@ -165,3 +165,9 @@ The following table is the canonical blueprint of scripts to include. Each scrip
 | **Aggregate**  | `aggregate_data`                             | Merge multiple host outputs into one dataset          | Python         |
 | **Visualize**  | `visualize_data`                             | Generate HTML dashboard or CSV/PDF reports            | Python/HTML    |
 
+
+Each script should:
+
+- Use safe, read-only commands (no destructive actions).
+- Accept `--output` and `--format` flags.
+- Return valid JSON (or JSONL) that follows the repo’s schema (see `/docs/schema.md`).
