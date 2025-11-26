@@ -16,7 +16,6 @@
 - [About SurfaceScan](#about-surfacescan)
 - [Why SurfaceScan?](#why-surfacescan)
 - [Features](#features)
-- [Supported Platforms](#supported-platforms)
 - [Quick Start](#quick-start)
 - [CLI Usage](#cli-usage)
 - [Script Functions (Blueprint)](#script-functions-blueprint)
@@ -58,14 +57,6 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 - ✅ Structured JSON outputs (SIEM & automation friendly)  
 - ✅ Outputs are selectable in CLI and can be opened directly  
 - ✅ Non-destructive and built for safe SOC/DFIR usage
-
----
-
-## Supported Platforms
-
-- Windows 10 / 11 / Server 2016+ (PowerShell 5.1+ / PowerShell 7+)  
-- Linux (Debian, Ubuntu, CentOS, RHEL, others)  
-- macOS 10.15+ (Catalina+)  
 
 ---
 
