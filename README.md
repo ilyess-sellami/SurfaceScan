@@ -136,30 +136,29 @@ chmod +x ./scripts/linux/list_processes.sh
 
 The following table is the canonical blueprint of scripts to include.
 
-| Category       | Script Name (Suggested)                      | Purpose                                                | OS / Language |
-|----------------|----------------------------------------------|--------------------------------------------------------|----------------|
-| **System**     | `get_system_info`                            | Collect OS, hostname, uptime, CPU, memory, architecture | All            |
-| **Users**      | `list_users_groups`                          | Enumerate local users, groups, last logon, admin flags | All            |
-| **Privileges** | `check_sudo_privileges`     | Identify users with root/admin/sudo rights            | All            |
-| **Processes**  | `list_processes`                             | List running processes with PID, owner, CPU/MEM usage | All            |
-| **Services**   | `list_services`                              | Gather services/daemons, status, startup type         | All            |
-| **Installed Apps** | `list_installed_apps`                   | Enumerate installed software & versions               | All            |
-| **Logs**       | `collect_event_logs` / `collect_syslogs`     | Collect Security/System/Application logs               | All            |
-| **Network**    | `network_interfaces`                         | Get interfaces, IPs, MAC addresses                    | All            |
-| **Network**    | `list_open_ports`                            | List listening ports + owning process                 | All            |
-| **Connections**| `active_connections`                         | Enumerate active TCP/UDP connections                  | All            |
-| **Routing**    | `default_gateways`                           | Extract routing table & default gateway               | All            |
-| **Startup**    | `list_startup_items`                         | Startup apps, autoruns, login items                   | All            |
-| **Tasks**      | `list_scheduled_tasks`                       | Cron jobs / Windows Scheduled Tasks                   | All            |
-| **Firewall**   | `firewall_status`                            | Check firewall rules & status                         | All            |
-| **Disk**       | `disk_usage`                                 | Disk usage, mount points, free/used space             | All            |
-| **Files**      | `recent_file_changes`                        | List files changed in last N days                     | All            |
-| **VM/Cloud**   | `list_virtual_machines`                      | Detect hypervisors, VM indicators, cloud agents       | Optional       |
-| **Threat Intel** | `cve_check_installed_software`             | Map installed apps to known CVEs                      | Optional       |
-| **Export**     | `export_to_json`                             | Convert raw outputs into normalized JSON              | Python         |
-| **Aggregate**  | `aggregate_data`                             | Merge multiple host outputs into one dataset          | Python         |
-| **Visualize**  | `visualize_data`                             | Generate HTML dashboard or CSV/PDF reports            | Python    |
-
+| Category           | Script Name (Suggested)                      | Purpose                                                 | OS / Language  |
+|--------------------|----------------------------------------------|---------------------------------------------------------|----------------|
+| **System**         | `get_system_info`                            | Collect OS, hostname, uptime, CPU, memory, architecture | All            |
+| **Users**          | `list_users_groups`                          | Enumerate local users, groups, last logon, admin flags  | All            |
+| **Privileges**     | `check_sudo_privileges`                      | Identify users with root/admin/sudo rights              | All            |
+| **Processes**      | `list_processes`                             | List running processes with PID, owner, CPU/MEM usage   | All            |
+| **Services**       | `list_services`                              | Gather services/daemons, status, startup type           | All            |
+| **Installed Apps** | `list_installed_apps`                        | Enumerate installed software & versions                 | All            |
+| **Logs**           | `collect_event_logs`.                        | Collect Security/System/Application logs                | All            |
+| **Network**        | `network_interfaces`                         | Get interfaces, IPs, MAC addresses                      | All            |
+| **Network**        | `list_open_ports`                            | List listening ports + owning process                   | All            |
+| **Connections**    | `active_connections`                         | Enumerate active TCP/UDP connections                    | All            |
+| **Routing**        | `default_gateways`                           | Extract routing table & default gateway                 | All            |
+| **Startup**        | `list_startup_items`                         | Startup apps, autoruns, login items                     | All            |
+| **Tasks**          | `list_scheduled_tasks`                       | Cron jobs / Windows Scheduled Tasks                     | All            |
+| **Firewall**       | `firewall_status`                            | Check firewall rules & status                           | All            |
+| **Disk**           | `disk_usage`                                 | Disk usage, mount points, free/used space               | All            |
+| **Files**          | `recent_file_changes`                        | List files changed in last N days                       | All            |
+| **VM/Cloud**       | `list_virtual_machines`                      | Detect hypervisors, VM indicators, cloud agents         | Optional       |
+| **Threat Intel**   | `cve_check_installed_software`               | Map installed apps to known CVEs                        | Optional       |
+| **Export**         | `export_to_json`                             | Convert raw outputs into normalized JSON                | Python         |
+| **Aggregate**      | `aggregate_data`                             | Merge multiple host outputs into one dataset            | Python         |
+| **Visualize**      | `visualize_data`                             | Generate HTML dashboard or CSV/PDF reports              | Python         |
 
 Each script should:
 
