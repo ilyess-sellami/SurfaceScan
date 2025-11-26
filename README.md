@@ -153,7 +153,6 @@ The following table is the canonical blueprint of scripts to include.
 | **Firewall**       | `firewall_status`                            | Check firewall rules & status                           | All            |
 | **Disk**           | `disk_usage`                                 | Disk usage, mount points, free/used space               | All            |
 | **Files**          | `recent_file_changes`                        | List files changed in last N days                       | All            |
-| **Threat Intel**   | `cve_check_installed_software`               | Map installed apps to known CVEs                        | All            |
 
 Each script should:
 
