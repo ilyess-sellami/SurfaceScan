@@ -13,10 +13,19 @@ APP_DESCRIPTION = (
 )
 
 def print_header(os_name):
-    fig = Figlet(font="slant")
+    fig = Figlet(font="big")
     ascii_name = fig.renderText(APP_NAME)
     console.print(f"[bold cyan]{ascii_name}[/bold cyan]")
-    console.print(Panel(APP_DESCRIPTION, style="green"))
+    
+    # Compute max line length for panel width
+    lines = APP_DESCRIPTION.split("\n")
+    panel_width = max(len(line) for line in lines) + 4  # extra padding
+
+    # Print panel with custom width and centered
+    console.print(
+        Panel(APP_DESCRIPTION, style="green", width=panel_width, expand=False, title="Info", title_align="center")
+    )
+
     
     # Detect OS
     emoji = get_os_emoji(os_name)
