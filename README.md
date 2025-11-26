@@ -135,7 +135,7 @@ chmod +x ./scripts/linux/list_processes.sh
 
 The following table is the canonical blueprint of scripts to include.
 
-| Category           | Script Name (Suggested)                      | Purpose                                                 | OS / Language  |
+| Category           | Script Name                                  | Purpose                                                 | OS / Language  |
 |--------------------|----------------------------------------------|---------------------------------------------------------|----------------|
 | **System**         | `get_system_info`                            | Collect OS, hostname, uptime, CPU, memory, architecture | All            |
 | **Users**          | `list_users_groups`                          | Enumerate local users, groups, last logon, admin flags  | All            |
