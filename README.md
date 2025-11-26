@@ -151,16 +151,6 @@ chmod +x ./scripts/linux/list_processes.sh
 }
 ```
 
-#### Dashboard
-
-- A lightweight HTML dashboard (templates in /dashboards/simple_html_dashboard/) visualizes:
-  - Top 10 hosts by number of open ports
-  - Hosts with admin users
-  - Recently modified critical files
-  - Timeline of service changes
-
-- Use python `tools/visualize_data.py aggregated/incident-surface.json` to generate `dashboard/index.html`.
-
 ---
 
 ## Security & Safety
