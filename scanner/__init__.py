@@ -1,2 +1,2 @@
 from scanner.core import detect_os, list_scripts, run_script
-from scanner.cli import print_header
+from scanner.cli import print_header, display_scripts_table
