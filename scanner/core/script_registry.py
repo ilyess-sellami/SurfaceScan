@@ -80,10 +80,5 @@ SCRIPT_REGISTRY = [
         "name": "recent_file_changes",
         "category": "Files",
         "description": "List files changed in last N days",
-    },
-    {
-        "name": "cve_check_installed_software",
-        "category": "Threat Intel",
-        "description": "Map installed apps to known CVEs",
-    },
+    }
 ]
