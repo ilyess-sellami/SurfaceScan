@@ -7,12 +7,24 @@ services_json="["
 
 first=true
 while IFS= read -r line; do
-    label=$(echo "$line" | awk '{print $1}')
-    pid=$(echo "$line" | awk '{print $2}')
-    status=$(if [ "$pid" != "-" ]; then echo "running"; else echo "stopped"; fi)
+    pid=$(echo "$line" | awk '{print $1}')
+    status_code=$(echo "$line" | awk '{print $2}')
+    label=$(echo "$line" | awk '{print $3}')
 
+    # Determine service running state
+    if [[ "$pid" == "-" ]]; then
+        status="stopped"
+        pid=0
+    else
+        status="running"
+    fi
+
+    # Add comma after first element
     [[ "$first" == true ]] && first=false || services_json+=","
-    services_json+="{\"label\":\"$label\",\"pid\":\"$pid\",\"status\":\"$status\"}"
+
+    # Add JSON object
+    services_json+="{\"label\":\"$label\",\"pid\":$pid,\"status\":\"$status\"}"
+
 done < <(launchctl list | tail -n +2)
 
 services_json+="]"
