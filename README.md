@@ -18,7 +18,7 @@
 - [Features](#features)
 - [Supported Platforms](#supported-platforms)
 - [Quick Start](#quick-start)
-- [Usage Examples](#usage-examples)
+- [CLI Usage](#cli-usage)
 - [Script Functions (Blueprint)](#script-functions-blueprint)
 - [Output Format & Dashboard](#output-format--dashboard)
 - [Security & Safety](#security--safety)
@@ -29,10 +29,12 @@
 
 ## About SurfaceScan
 
+
 **SurfaceScan** is a professional, open-source **incident surface scanner** designed for SOC analysts, DFIR teams, and security engineers.  
-It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux (Bash)**, and **macOS (Bash/zsh)** to collect telemetry, configuration, and state information from endpoints. Outputs are normalized to JSON for ingestion into SIEMs, incident management platforms (TheHive, FIR), or internal dashboards.
+It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux (Bash)**, and **macOS (Bash)** to collect telemetry, configuration, and state information from endpoints. Outputs are normalized to JSON for ingestion into SIEMs, incident management platforms (TheHive, FIR), or internal dashboards.
 
 **Keywords:** incident surface, SOC, DFIR, incident response, endpoint monitoring, attack surface mapping, cross-platform, PowerShell, Bash, Python.
+
 
 ---
 
@@ -48,12 +50,13 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 
 ## Features
 
+
 - ✅ Cross-platform: Windows, Linux, macOS  
-- ✅ Standalone, ready-to-run scripts for fast data collection  
+- ✅ CLI with interactive script selection and ASCII banner  
+- ✅ Runs as root/admin for full privileged access  
+- ✅ Persistent terminal loop — select scripts multiple times without exiting  
 - ✅ Structured JSON outputs (SIEM & automation friendly)  
-- ✅ Aggregation tools to merge multi-host results into a single map  
-- ✅ Optional HTML dashboard for visualization  
-- ✅ Extensible plugin model for cloud and network asset scanners  
+- ✅ Outputs are selectable in CLI and can be opened directly  
 - ✅ Non-destructive and built for safe SOC/DFIR usage
 
 ---
@@ -83,45 +86,38 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### 3) Run an example script (Linux example)
+#### 3) Run the CLI
+
+Linux / macOS::
 
 ```bash
- ./scripts/linux/list_users_groups.sh > output/linux-users-$(hostname).json
+sudo python cli.py
 ```
 
-#### 4) Aggregate collected outputs
-
+Windows (PowerShell as Administrator):
 ```bash
-python tools/aggregate_data.py --input outputs/ --output aggregated/incident-surface.json
+python cli.py
 ```
-
-#### 5) Launch the dashboard (optional)
-
-```bash
-python tools/visualize_data.py aggregated/incident-surface.json
-```
+The CLI detects the OS, displays available scripts with emojis, and allows multiple selections.
+You can type `?` to review scripts again or `exit` to quit.
 
 ---
 
-## Usage Examples
+## CLI Usage
 
-#### Windows (PowerShell)
+- The CLI prints a **big ASCII SurfaceScan banner** and app description.
 
-Open an elevated PowerShell prompt to run scripts that **require admin privileges**:
+- Detects the **OS** and displays an **emoji**:
 
-```bash
-# Collect basic system info and users
-.\scripts\windows\get_system_info.ps1 -OutputPath .\outputs\windows-hostname-system.json
-.\scripts\windows\list_users_groups.ps1 -OutputPath .\outputs\windows-hostname-users.json
-```
+  - Windows 🪟
+  - Linux 🐧
+  - macOS 🍎
 
-#### Linux / macOS (Bash)
+- Shows a **table of scripts**: number, script name, description.
 
-```bash
-# Make sure script has execute permissions
-chmod +x ./scripts/linux/list_processes.sh
-./scripts/linux/list_processes.sh > outputs/linux-hostname-processes.json
-```
+- Run scripts by entering their number; after execution, the **output file path is printed in blue and underlined**.
+
+- CLI remains open after running a script, allowing multiple script executions without restarting.
 
 ---
 
@@ -150,6 +146,8 @@ chmod +x ./scripts/linux/list_processes.sh
   "logs": {...}
 }
 ```
+
+JSON outputs are saved in the `outputs/<OS>/` folder and can be opened directly from the CLI after execution.
 
 ---
 
