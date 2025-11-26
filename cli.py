@@ -12,8 +12,10 @@ def main():
     # Print header
     print_header(os_name)
 
-    # List available scripts
+    # Get available scripts
     scripts = list_scripts(os_name)
+    
+    # Display scripts table
     if not display_scripts_table(scripts):
         console.print(
             f"[bold red]Failed to display available scripts'.[/bold red]"

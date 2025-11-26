@@ -1,23 +1,7 @@
 import os
 import subprocess
 from datetime import datetime
-
-# ---------------------------
-# Configuration
-# ---------------------------
-SCRIPTS_DIR = "scripts"
-OUTPUTS_DIR = "outputs"
-
-
-def list_scripts(os_name):
-    folder = os.path.join(SCRIPTS_DIR, os_name)
-    scripts = []
-    for f in os.listdir(folder):
-        if os_name == "windows" and f.endswith(".ps1"):
-            scripts.append(f)
-        elif os_name in ["macos", "linux"] and f.endswith(".sh"):
-            scripts.append(f)
-    return scripts
+from scanner.core.utils import SCRIPTS_DIR, OUTPUTS_DIR
 
 
 def run_script(os_name, script_name):
