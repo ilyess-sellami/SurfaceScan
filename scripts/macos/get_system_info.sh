@@ -36,8 +36,8 @@ JSON=$(cat <<EOF
     "hostname": "$HOSTNAME",
     "uptime_seconds": $UPTIME_SEC,
     "cpu": "$CPU_MODEL",
-    "cpu_cores": $CPU_CORES,
-    "memory_total_mb": $MEM_TOTAL_MB
+    "cpu_cores": "$CPU_CORES",
+    "memory_total_mb": "$MEM_TOTAL_MB"
   }
 }
 EOF
