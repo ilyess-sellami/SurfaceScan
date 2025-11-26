@@ -3,12 +3,6 @@
 **Cross-platform Incident Surface Scanner for SOC & DFIR teams**  
 *Gain complete visibility across Windows · Linux · macOS — ready-to-run scripts, structured output.*
 
-[![GitHub stars](https://img.shields.io/github/stars/username/SurfaceScan?style=social)](https://github.com/ilyess-sellami/SurfaceScan/stargazers)
-[![Issues](https://img.shields.io/github/issues/username/SurfaceScan)](https://github.com/ilyess-sellami/SurfaceScan/issues)
-[![License](https://img.shields.io/github/license/username/SurfaceScan)](LICENSE)
-[![CI](https://img.shields.io/badge/CI-none-lightgrey)](#)
-[![Downloads](https://img.shields.io/github/downloads/ilyess-sellami/SurfaceScan/total)](#)
-
 ---
 
 <p align="center">
@@ -133,32 +127,9 @@ chmod +x ./scripts/linux/list_processes.sh
 
 ## Script Functions (Blueprint)
 
-The following table is the canonical blueprint of scripts to include.
-
-| Category           | Script Name                                  | Purpose                                                 | OS / Language  |
-|--------------------|----------------------------------------------|---------------------------------------------------------|----------------|
-| **System**         | `get_system_info`                            | Collect OS, hostname, uptime, CPU, memory, architecture | All            |
-| **Users**          | `list_users_groups`                          | Enumerate local users, groups, last logon, admin flags  | All            |
-| **Privileges**     | `check_sudo_privileges`                      | Identify users with root/admin/sudo rights              | All            |
-| **Processes**      | `list_processes`                             | List running processes with PID, owner, CPU/MEM usage   | All            |
-| **Services**       | `list_services`                              | Gather services/daemons, status, startup type           | All            |
-| **Installed Apps** | `list_installed_apps`                        | Enumerate installed software & versions                 | All            |
-| **Logs**           | `collect_event_logs`.                        | Collect Security/System/Application logs                | All            |
-| **Network**        | `network_interfaces`                         | Get interfaces, IPs, MAC addresses                      | All            |
-| **Network**        | `list_open_ports`                            | List listening ports + owning process                   | All            |
-| **Connections**    | `active_connections`                         | Enumerate active TCP/UDP connections                    | All            |
-| **Routing**        | `default_gateways`                           | Extract routing table & default gateway                 | All            |
-| **Startup**        | `list_startup_items`                         | Startup apps, autoruns, login items                     | All            |
-| **Tasks**          | `list_scheduled_tasks`                       | Cron jobs / Windows Scheduled Tasks                     | All            |
-| **Firewall**       | `firewall_status`                            | Check firewall rules & status                           | All            |
-| **Disk**           | `disk_usage`                                 | Disk usage, mount points, free/used space               | All            |
-| **Files**          | `recent_file_changes`                        | List files changed in last N days                       | All            |
-
-Each script should:
-
-- Use safe, read-only commands (no destructive actions).
-- Accept `--output` and `--format` flags.
-- Return valid JSON (or JSONL) that follows the repo’s schema (see `/docs/schema.md`).
+<p align="center">
+  <img src="docs/available-scripts.png" alt="Available Scripts" width="100%" height="100%" />
+</p>
 
 ---
 
