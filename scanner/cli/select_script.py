@@ -1,26 +1,22 @@
-from rich.prompt import Prompt
 from rich.console import Console
 
 console = Console()
 
 
-def select_script(scripts):
+def select_script(scripts, choice):
     """
     Selector that loops until valid input is provided.
     - User enters ONE script number
     - Returns a single script name as string
     """
 
-    while True:
-        choice = Prompt.ask("\nEnter script number to run")
+    try:
+        index = int(choice.strip()) - 1
 
-        try:
-            index = int(choice.strip()) - 1
+        if 0 <= index < len(scripts):
+                return scripts[index]["filename"]
 
-            if 0 <= index < len(scripts):
-                return scripts[index]['filename']
+        console.print("[red]❌ Invalid index. Choose a valid script number.[/red]")
 
-            console.print("[red]❌ Invalid index. Choose a valid script number.[/red]")
-
-        except ValueError:
-            console.print("[red]❌ Invalid input. Enter a number (example: 2)[/red]")
+    except ValueError:
+        console.print("[red]❌ Invalid input. Enter a number (example: 2)[/red]")

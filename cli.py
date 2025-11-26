@@ -14,31 +14,52 @@ def main():
 
     # Get available scripts
     scripts = list_scripts(os_name)
-        
+
+    if not scripts:
+        console.print("[bold red]No scripts available for this OS.[/bold red]")
+        return
+
     # Display scripts table
-    if not display_scripts_table(scripts):
+    display_scripts_table(scripts)
+
+    while True:
+
+        # Prompt user for script choice
         console.print(
-            f"[bold red]Failed to display available scripts'.[/bold red]"
+            "[bold yellow]Select a script number to run, or type 'exit' to quit, '?' to review table again.[/bold yellow]"
         )
-        return
+        choice = console.input("Your choice: ").strip()
 
-    # Select script to run
-    selected_script = select_script(scripts)
-    
-    # Run selected script
-    console.print("\n[bold green]Running selected script...[/bold green]\n")
-    output_file = run_script(os_name, selected_script)
+        # Handle exit and help commands
+        if choice.lower() in ["exit", "quit"]:
+            console.print("[bold cyan]Exiting SurfaceScan CLI. Goodbye![/bold cyan]")
+            break
 
-    if not output_file:
+        # Handle help command
+        elif choice == "?":
+            display_scripts_table(scripts)
+            continue
+
+        # Select script based on user input
+        selected_script = select_script(scripts, choice)
+
+        if not selected_script:
+            continue
+
+        # Run selected script
+        console.print("\n[bold green]Running selected script...[/bold green]\n")
+        output_file = run_script(os_name, selected_script)
+
+        if not output_file:
+            console.print(
+                f"[bold red]Failed to run the script '{selected_script}'.[/bold red]"
+            )
+            return
+
         console.print(
-            f"[bold red]Failed to run the script '{selected_script}'.[/bold red]"
+            f"[green][+][/green] Script '[bold]{selected_script}[/bold]' executed. "
+            f"Output saved to [blue][underline][bold]{output_file}[/bold][/underline][/blue]"
         )
-        return
-
-    console.print(
-        f"[green][+][/green] Script '[bold]{selected_script}[/bold]' executed. "
-        f"Output saved to [blue][underline][bold]{output_file}[/bold][/underline][/blue]"
-    )
 
 
 if __name__ == "__main__":
