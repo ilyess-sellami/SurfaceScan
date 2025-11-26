@@ -1,6 +1,12 @@
 from rich.console import Console
-from scanner.cli import print_header, display_scripts_table, select_script,check_privileges
+from scanner.cli import (
+    print_header,
+    display_scripts_table,
+    select_script,
+    check_privileges,
+)
 from scanner.core import detect_os, list_scripts, run_script
+import time
 
 console = Console()
 
@@ -8,7 +14,7 @@ console = Console()
 def main():
     # Detect operating system
     os_name = detect_os()
-    
+
     # Check for necessary privileges
     check_privileges(os_name)
 
@@ -17,7 +23,6 @@ def main():
 
     # Get available scripts
     scripts = list_scripts(os_name)
-
     if not scripts:
         console.print("[bold red]No scripts available for this OS.[/bold red]")
         return
@@ -25,6 +30,7 @@ def main():
     # Display scripts table
     display_scripts_table(scripts)
 
+    # Main interaction loop
     while True:
 
         # Prompt user for script choice
@@ -45,23 +51,27 @@ def main():
 
         # Select script based on user input
         selected_script = select_script(scripts, choice)
-
         if not selected_script:
             continue
 
-        # Run selected script
+        # Run selected script with loading animation
         console.print("\n[bold green]Running selected script...[/bold green]\n")
-        output_file = run_script(os_name, selected_script)
 
+        # progress 2 seconds loading
+        time.sleep(2)
+
+        # Execute the script
+        output_file = run_script(os_name, selected_script)
         if not output_file:
             console.print(
                 f"[bold red]Failed to run the script '{selected_script}'.[/bold red]"
             )
             return
 
+        # Inform user of successful execution
         console.print(
             f"[green][+][/green] Script '[bold]{selected_script}[/bold]' executed. "
-            f"Output saved to [blue][underline][bold]{output_file}[/bold][/underline][/blue]"
+            f"Output saved to [blue][underline][bold]{output_file}[/bold][/underline][/blue]\n"
         )
 
 
