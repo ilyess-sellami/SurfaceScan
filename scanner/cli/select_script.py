@@ -18,7 +18,7 @@ def select_script(scripts):
             index = int(choice.strip()) - 1
 
             if 0 <= index < len(scripts):
-                return scripts[index]
+                return scripts[index]['filename']
 
             console.print("[red]❌ Invalid index. Choose a valid script number.[/red]")
 

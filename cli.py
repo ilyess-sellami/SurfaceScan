@@ -22,23 +22,23 @@ def main():
         )
         return
 
-    # # Select script to run
-    # selected_script = select_script(scripts)
+    # Select script to run
+    selected_script = select_script(scripts)
+    
+    # Run selected script
+    console.print("\n[bold green]Running selected script...[/bold green]\n")
+    output_file = run_script(os_name, selected_script)
 
-    # # Run selected script
-    # console.print("\n[bold green]Running selected script...[/bold green]\n")
-    # output_file = run_script(os_name, selected_script)
+    if not output_file:
+        console.print(
+            f"[bold red]Failed to run the script '{selected_script}'.[/bold red]"
+        )
+        return
 
-    # if not output_file:
-    #     console.print(
-    #         f"[bold red]Failed to run the script '{selected_script}'.[/bold red]"
-    #     )
-    #     return
-
-    # console.print(
-    #     f"[green][+][/green] Script '[bold]{selected_script}[/bold]' executed. "
-    #     f"Output saved to [blue][underline][bold]{output_file}[/bold][/underline][/blue]"
-    # )
+    console.print(
+        f"[green][+][/green] Script '[bold]{selected_script}[/bold]' executed. "
+        f"Output saved to [blue][underline][bold]{output_file}[/bold][/underline][/blue]"
+    )
 
 
 if __name__ == "__main__":
