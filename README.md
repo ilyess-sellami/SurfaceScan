@@ -1,3 +1,19 @@
+# SurfaceScan 🛡️
+
+**Cross-platform Incident Surface Scanner for SOC & DFIR teams**  
+*Gain complete visibility across Windows · Linux · macOS — ready-to-run scripts, structured output.*
+
+[![GitHub stars](https://img.shields.io/github/stars/username/SurfaceScan?style=social)](https://github.com/ilyess-sellami/SurfaceScan/stargazers)
+[![Issues](https://img.shields.io/github/issues/username/SurfaceScan)](https://github.com/ilyess-sellami/SurfaceScan/issues)
+[![License](https://img.shields.io/github/license/username/SurfaceScan)](LICENSE)
+[![CI](https://img.shields.io/badge/CI-none-lightgrey)](#) <!-- Replace with real CI badge -->
+[![Downloads](https://img.shields.io/github/downloads/ilyess-sellami/SurfaceScan/total)](#)
+
+---
+
+<p align="center">
+  <img src="docs/banner.png" alt="SurfaceScan banner" width="100%" height="100%" />
+</p>
 
 ---
 
