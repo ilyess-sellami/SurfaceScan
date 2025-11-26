@@ -11,7 +11,7 @@
 
 ---
 
-![](/docs/banner.png)
+![SurfaceScan](/docs/banner.png)
 
 ---
 
