@@ -152,7 +152,6 @@ The following table is the canonical blueprint of scripts to include.
 | **Startup**    | `list_startup_items`                         | Startup apps, autoruns, login items                   | All            |
 | **Tasks**      | `list_scheduled_tasks`                       | Cron jobs / Windows Scheduled Tasks                   | All            |
 | **Firewall**   | `firewall_status`                            | Check firewall rules & status                         | All            |
-| **Antivirus / EDR** | `antivirus_status`                     | Detect AV/EDR presence & status (best-effort)         | All            |
 | **Disk**       | `disk_usage`                                 | Disk usage, mount points, free/used space             | All            |
 | **Files**      | `recent_file_changes`                        | List files changed in last N days                     | All            |
 | **VM/Cloud**   | `list_virtual_machines`                      | Detect hypervisors, VM indicators, cloud agents       | Optional       |
