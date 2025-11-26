@@ -1,11 +1,6 @@
 from rich.console import Console
-from scanner import (
-    list_scripts,
-    run_script,
-    detect_os,
-    print_header,
-    display_scripts_table,
-)
+from scanner.cli import print_header, display_scripts_table, select_script
+from scanner.core import detect_os, list_scripts, run_script
 
 console = Console()
 
@@ -22,15 +17,12 @@ def main():
     if not display_scripts_table(scripts):
         return
 
-    # User input for scripts to run
-
-    # Run selected scripts
-    console.print("\n[bold green]Running selected scripts...[/bold green]\n")
-    for script in selected_scripts:
-        run_script(os_name, script)
-
-    console.print("\n[bold green]All selected scripts executed.[/bold green]")
-
+    # Select script to run
+    selected_script = select_script(scripts)
+    
+    # Run selected script
+    console.print("\n[bold green]Running selected script...[/bold green]\n")
+    run_script(os_name, selected_script)
 
 if __name__ == "__main__":
     main()
