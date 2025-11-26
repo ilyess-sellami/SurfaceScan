@@ -146,7 +146,7 @@ The following table is the canonical blueprint of scripts to include.
 | **Installed Apps** | `list_installed_apps`                   | Enumerate installed software & versions               | All            |
 | **Logs**       | `collect_event_logs` / `collect_syslogs`     | Collect Security/System/Application logs               | All            |
 | **Network**    | `network_interfaces`                         | Get interfaces, IPs, MAC addresses                    | All            |
-|                | `list_open_ports`                            | List listening ports + owning process                 | All            |
+| **Network**    | `list_open_ports`                            | List listening ports + owning process                 | All            |
 | **Connections**| `active_connections`                         | Enumerate active TCP/UDP connections                  | All            |
 | **Routing**    | `default_gateways`                           | Extract routing table & default gateway               | All            |
 | **Startup**    | `list_startup_items`                         | Startup apps, autoruns, login items                   | All            |
