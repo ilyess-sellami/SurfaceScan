@@ -1,5 +1,5 @@
 from rich.console import Console
-from scanner.cli import print_header, display_scripts_table, select_script
+from scanner.cli import print_header, display_scripts_table, select_script,check_privileges
 from scanner.core import detect_os, list_scripts, run_script
 
 console = Console()
@@ -8,6 +8,9 @@ console = Console()
 def main():
     # Detect operating system
     os_name = detect_os()
+    
+    # Check for necessary privileges
+    check_privileges(os_name)
 
     # Print header
     print_header(os_name)
