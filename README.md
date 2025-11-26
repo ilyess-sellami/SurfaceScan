@@ -156,9 +156,6 @@ The following table is the canonical blueprint of scripts to include.
 | **Files**          | `recent_file_changes`                        | List files changed in last N days                       | All            |
 | **VM/Cloud**       | `list_virtual_machines`                      | Detect hypervisors, VM indicators, cloud agents         | Optional       |
 | **Threat Intel**   | `cve_check_installed_software`               | Map installed apps to known CVEs                        | Optional       |
-| **Export**         | `export_to_json`                             | Convert raw outputs into normalized JSON                | Python         |
-| **Aggregate**      | `aggregate_data`                             | Merge multiple host outputs into one dataset            | Python         |
-| **Visualize**      | `visualize_data`                             | Generate HTML dashboard or CSV/PDF reports              | Python         |
 
 Each script should:
 
