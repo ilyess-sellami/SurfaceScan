@@ -31,7 +31,7 @@
 
 
 **SurfaceScan** is a professional, open-source **incident surface scanner** designed for SOC analysts, DFIR teams, and security engineers. 
- 
+
 It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux (Bash)**, and **macOS (Bash)** to collect telemetry, configuration, and state information from endpoints. Outputs are normalized to JSON for ingestion into SIEMs, incident management platforms (TheHive, FIR), or internal dashboards.
 
 **Keywords:** incident surface, SOC, DFIR, incident response, endpoint monitoring, attack surface mapping, cross-platform, PowerShell, Bash, Python.
@@ -50,7 +50,6 @@ It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux 
 ---
 
 ## Features
-
 
 - ✅ Cross-platform: Windows, Linux, macOS  
 - ✅ CLI with interactive script selection and ASCII banner  
@@ -123,6 +122,10 @@ You can type `?` to review scripts again or `exit` to quit.
 ---
 
 ## Script Functions (Blueprint)
+
+The following image is a screenshot of the table displayed in the CLI app.  
+It shows all supported functions with their number, name, and description.  
+You can choose the number of the function you want to run directly from the app.
 
 <p align="center">
   <img src="docs/available-scripts.png" alt="Available Scripts" width="100%" height="100%" />
