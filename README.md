@@ -11,9 +11,7 @@
 
 ---
 
-<p align="center">
-  <img src="docs/banner.png" alt="SurfaceScan banner" width="100%" height="100%" />
-</p>
+![](/docs/banner.png)
 
 ---
 
