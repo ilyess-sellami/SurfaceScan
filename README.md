@@ -30,7 +30,8 @@
 ## About SurfaceScan
 
 
-**SurfaceScan** is a professional, open-source **incident surface scanner** designed for SOC analysts, DFIR teams, and security engineers.  
+**SurfaceScan** is a professional, open-source **incident surface scanner** designed for SOC analysts, DFIR teams, and security engineers. 
+ 
 It provides ready-to-run, modular scripts for **Windows (PowerShell)**, **Linux (Bash)**, and **macOS (Bash)** to collect telemetry, configuration, and state information from endpoints. Outputs are normalized to JSON for ingestion into SIEMs, incident management platforms (TheHive, FIR), or internal dashboards.
 
 **Keywords:** incident surface, SOC, DFIR, incident response, endpoint monitoring, attack surface mapping, cross-platform, PowerShell, Bash, Python.
