@@ -1,7 +1,7 @@
 # SurfaceScan 🛡️
 
 **Cross-platform Incident Surface Scanner for SOC & DFIR teams**  
-*Gain complete visibility across Windows · Linux · macOS — ready-to-run scripts, structured output.*
+*Gain complete visibility across ***Windows*** · ***Linux*** · ***macOS*** — ready-to-run scripts, structured output.*
 
 ---
 
