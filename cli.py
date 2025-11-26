@@ -15,6 +15,9 @@ def main():
     # List available scripts
     scripts = list_scripts(os_name)
     if not display_scripts_table(scripts):
+        console.print(
+            f"[bold red]Failed to display available scripts'.[/bold red]"
+        )
         return
 
     # Select script to run
