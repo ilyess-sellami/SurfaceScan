@@ -3,6 +3,10 @@
 **Cross-platform Incident Surface Scanner for SOC & DFIR teams**  
 *Gain complete visibility across ***Windows*** · ***Linux*** · ***macOS*** — ready-to-run scripts, structured output.*
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
+![Bash](https://img.shields.io/badge/Bash-Linux%2FmacOS-lightgrey?style=for-the-badge&logo=gnubash)
+![PowerShell](https://img.shields.io/badge/PowerShell-Windows-5391FE?style=for-the-badge&logo=powershell)
+
 ---
 
 <p align="center">
